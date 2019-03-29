@@ -1,0 +1,33 @@
+
+source ~/.zshrc-manager.sh
+source ~/.zsh-keybindings.sh
+source ~/.zsh-prompt.sh
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt nomatch notify
+unsetopt appendhistory autocd beep extendedglob
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/lukas.vavrek/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# use MacVim
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+
+# add ruby to the path
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+alias ruby='/usr/local/opt/ruby/bin/ruby'
+
+c() {
+  cd $1;
+  ls;
+}
+alias cd="c"
+

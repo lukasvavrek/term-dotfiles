@@ -1,0 +1,171 @@
+execute pathogen#infect()
+
+" remap leader key
+let mapleader=","
+
+" syntax highlighting based on the file name
+filetype on
+syntax on
+
+colorscheme Tomorrow-Night
+
+"m4 set font
+set guifont=font-fira-code:h18
+
+" turn on line numbers
+set relativenumber
+set number
+
+"jset cursorline
+" hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
+
+" hotkey for reloading vimrc
+map <leader>r :source ~/.vimrc<CR>
+
+" map jj to Escape in insert mode
+:imap jj <ESC>
+
+" add empty line when pressing enter in command mode
+map <CR> o<Esc>k
+
+" saving file with w!! forces it with sudo
+cmap w!! %!sudo tee > /dev/null %
+
+set hidden
+set history=100
+
+filetype indent on
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set autoindent
+
+" set how invisible characters should be visible
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+" ignore case for seach when search pattern is all lowercase
+set smartcase
+set ignorecase
+
+" set location for backup/swap files
+set backupdir=~/.vim-tmp
+set directory=~/.vim-tmp
+
+" remove whitespaces on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" highlight searched words
+set hlsearch
+nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
+nnoremap <C-c> :set norelativenumber<CR>:set nonumber<CR>:echo "Line numbers turned off."<CR>
+nnoremap <C-n> :set relativenumber<CR>:set number<CR>:echo "Line numbers turned on."<CR>
+
+" navigating back and forth in search mode
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" normal mode navigation
+nnoremap H 0
+nnoremap L $
+nnoremap J G
+nnoremap K gg
+
+map <tab> %tab
+
+set backspace=indent,eol,start
+nnoremap <Space> za
+nnoremap <leader>z zMzvzz
+
+" cancel search with escape key
+nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+
+" uncomment this if you want to use arrows
+" map <D-A-RIGHT> <C-w>l
+" map <D-A-LEFT> <C-w>h
+" map <D-A-DOWN> <C-w><C-w>
+" map <D-A-UP> <C-w>W
+
+" re-open previously opened file
+nnoremap <Leader><Leader> :e#<CR>
+
+" show matching parenthesis
+set showmatch
+
+" file and window management
+inoremap <leader>w <Esc>:w<CR>
+nnoremap <leader>w :w<CR>
+
+inoremap <leader>q <ESC>:q<CR>
+nnoremap <leader>q :q<CR>
+
+inoremap <leader>x <ESC>:x<CR>
+nnoremap <leader>x :x<CR>
+
+nnoremap <leader>e :Ex<CR>
+nnoremap <leader>t :tabnew<CR>:Ex<CR>
+nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
+nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
+
+" return to the same line you left off at
+if has("autocmd")
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+        \| exe "normal! g'\"" | endif
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" netr
+
+" absolute width of netrw window
+let g:netrw_winsize = -28
+
+" tree-view
+let g:netrw_liststyle = 3
+
+" sort is affecting only: directories on the top, files below
+let g:netrw_sort_sequence = '[\/]$,*'
+
+" open file in a new tab
+let g:netrw_browse_split = 3
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctrlp.vim
+
+" file related mappings
+nnoremap <silent> <Leader>f :CtrlP<CR>
+nnoremap <silent> <Leader>fm :CtrlPMRU<CR>
+
+" buffer related mappings
+" cycle between buffer
+nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
+"create (N)ew buffer
+nnoremap <silent> <Leader>bb :bn<CR>
+"(D)elete the current buffer
+nnoremap <silent> <Leader>bd :bdelete<CR>
+"(U)nload the current buffer
+nnoremap <silent> <Leader>bu :bunload<CR>
+" (L)ock the current buffer"
+nnoremap <silent> <Leader>bl :setnomodifiable<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" lightline
+
+let g:lightline = { 'colorscheme': 'solarized', }
+set laststatus=2
+set noshowmode
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" syntastic
+
+set statusline=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
