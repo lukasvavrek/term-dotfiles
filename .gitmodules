@@ -1,24 +1,24 @@
-[submodule "vim/bundles/command-t"]
-	path = vim/bundles/command-t
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
 	url = https://github.com/wincent/command-t
-[submodule "vim/bundles/ctrlp.vim"]
-	path = vim/bundles/ctrlp.vim
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
-[submodule "vim/bundles/nerdcommenter.git"]
-	path = vim/bundles/nerdcommenter.git
+[submodule "vim/bundle/nerdcommenter.git"]
+	path = vim/bundle/nerdcommenter.git
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "vim/bundles/lightline.vim"]
-	path = vim/bundles/lightline.vim
+[submodule "vim/bundle/lightline.vim"]
+	path = vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
-[submodule "vim/bundles/supertab"]
-	path = vim/bundles/supertab
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab
-[submodule "vim/bundles/vim-fugitive"]
-	path = vim/bundles/vim-fugitive
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "vim/bundles/vim-polygot"]
-	path = vim/bundles/vim-polygot
+[submodule "vim/bundle/vim-polygot"]
+	path = vim/bundle/vim-polygot
 	url = https://github.com/sheerun/vim-polyglot
-[submodule "vim/bundles/syntastic"]
-	path = vim/bundles/syntastic
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic
