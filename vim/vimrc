@@ -5,6 +5,7 @@ let mapleader=","
 
 " syntax highlighting based on the file name
 filetype on
+filetype plugin on
 syntax on
 
 colorscheme Tomorrow-Night
@@ -36,8 +37,8 @@ set history=100
 
 filetype indent on
 set nowrap
-set tabstop=2
-set shiftwidth=2
+set tabstop=4 softtabstop=4
+set shiftwidth=4
 set expandtab
 set smartindent
 set autoindent
@@ -169,3 +170,18 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" limit markdown files to have max line width of 80
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YT: ThePrimeagen => Your first VimRC: How to setup your vim's vimrs
+set noerrorbells
+set noswapfile
+set nobackup
+set undodir=~/.vim-tmp
+set undofile
+set incsearch
